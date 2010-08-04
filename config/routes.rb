@@ -9,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :people do |people|
     people.resources :emails
   end
+  
+  map.resources :sale_items
 
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'

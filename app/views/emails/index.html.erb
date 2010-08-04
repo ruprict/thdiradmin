@@ -1,0 +1,12 @@
+<h1>Email for <%=@person.full_name%></h1>
+<ul>
+  <% for @email in @emails %>
+    <li><%=@email.EmailType %> - <%=@email.EmailAddress%> <%= link_to 'Edit', edit_person_email_path(@person, @email)  %> | <%= link_to 'Delete', person_email_path(@person, @email), :confirm => "Are you sure?",:method=>:delete  %> </li>
+  <% end %>
+
+
+</ul>
+
+
+<%= link_to 'New Email Address', new_person_email_path(@person)  %> | 
+<%= link_to 'Back', person_path(@person)  %>

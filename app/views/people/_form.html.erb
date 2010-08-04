@@ -1,0 +1,20 @@
+<% form_for([@address,@person]) do |f| %>
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :FirstName %><br />
+    <%= f.text_field :FirstName %>
+  </div>
+  <div class="field">
+    <%= f.label :LastName %><br />
+    <%= f.text_field :LastName %>
+  </div>
+  <div class="field">
+    <%= f.label :Birthdate %><br />
+    <%= f.date_select :Birthdate, :include_blank => true, :start_year=>1970 %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

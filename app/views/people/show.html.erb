@@ -1,0 +1,27 @@
+<p>
+  <b>First name:</b>
+  <%= @person.FirstName %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @person.LastName %>
+</p>
+
+
+<p>
+  <b>Birthdate:</b>
+  <%= @person.Birthdate %>
+</p>
+
+<h2> Email </h2>
+<ul>
+  <% for @email in @person.emails %>
+    <li><%=@email.EmailType%> : <%= @email.EmailAddress %> | <%=link_to 'Edit', edit_person_email_path(@person, @email) %> | <%=link_to 'Delete',person_email_path(@person, @email), :confirm=>'Are you sure?', :method => :delete %></li>
+  <% end %>
+</ul>
+<%= link_to 'Add Email', new_person_email_path(@person) %>
+
+
+<%= link_to 'Edit', edit_address_person_path(@address,@person) %> |
+<%= link_to 'Back', address_people_path(@address) %>

@@ -1,0 +1,27 @@
+<% form_for([@address,@phone_number]) do |f| %>
+
+  <% if @phone_number.errors.any? %>
+    HI
+    <div id="errorExplanation">
+      <h2>The following errors prohibited this form from being saved:</h2>
+      <ul>
+      <% @phone_number.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :PhoneType %><br />
+    <%= f.text_field :PhoneType %>
+  </div>
+  <div class="field">
+    <%= f.label :PhoneNumber %><br />
+    <%= f.text_field :PhoneNumber %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

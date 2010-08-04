@@ -1,0 +1,15 @@
+<%= form_for(@address) do |f| %>
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :street_number %><br />
+    <%= f.text_field :street_number %>
+  </div>
+  <div class="field">
+    <%= f.label :street_name %><br />
+    <%= f.text_field :street_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

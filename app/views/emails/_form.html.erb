@@ -1,0 +1,13 @@
+<% form_for ([@person, @email]) do |f| %>
+  <%= f.error_messages %>
+  <div class="field">
+    <%=f.label :EmailAddress %><br/>
+    <%=f.text_field :EmailAddress %>
+  </div>
+  <div class="field">
+    <%=f.label :EmailType %><br/>
+    <%=f.text_field :EmailType %>
+  </div>
+  <%=f.submit %>
+
+<%end%>

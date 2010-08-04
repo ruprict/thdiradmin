@@ -1,0 +1,28 @@
+<p>
+  <b>Street number:</b>
+  <%= @address.StreetNumber %>
+</p>
+
+<p>
+  <b>Street name:</b>
+  <%= @address.StreetName %>
+</p>
+<ul>
+  <% for @person in @address.people %>
+    <li><%= link_to  @person.full_name, address_person_path(@address,@person) %></li>
+  <% end %>
+</ul>
+<%= link_to 'Add New Person', new_address_person_path(@address) %>
+
+<h2> Phone Numbers </h2>
+<ul>
+  <% for @phone in @address.phone_numbers %>
+    <li><%=@phone.PhoneType%> : <%= @phone.PhoneNumber %> | <%=link_to 'Edit', edit_address_phone_number_path(@person.address, @phone) %> | <%=link_to 'Delete',address_phone_number_path(@person.address, @phone), :confirm=>'Are you sure?', :method => :delete %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add Phone Number', new_address_phone_number_path(@person.address) %>
+<div style="margin-top:20px">
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>
+</div>

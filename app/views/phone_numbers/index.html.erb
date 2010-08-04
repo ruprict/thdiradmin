@@ -1,0 +1,7 @@
+<h2>Phone Numbers for <%= @person.full_name %></h2>
+
+<ul>
+  <% for @phone in @person.phone_numbers %>
+    <li><%= @phone.phone_number %> | <%= @phone.phone_type %> <%= link_to "Edit", edit_address_person_phone_number_path(@person.address,@person,@phone) %></li>
+  <% end %>
+</ul>

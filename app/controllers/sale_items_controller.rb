@@ -9,4 +9,9 @@ class SaleItemsController < ActionController::Base
     end
   end
   
+  def edit
+    @sale_item = SaleItem.find(params[:id])
+    
+  end
+  
 end

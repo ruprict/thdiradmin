@@ -1,0 +1,27 @@
+<% form_for @sale_item do |f| -%>
+  <%=f.error_messages %>
+  <div class="field">
+    <%= f.label :Item %>
+    <%= f.text_area :Item, :rows=>2 %>
+  </div>
+  <div class="field">
+    <%= f.label :Category %>
+    <%= f.text_field :Category %>
+  </div>
+  <div class="field">
+    <%= f.label :Price %>
+    <%= f.text_field :Price %>
+  </div>
+  <div class="field">
+    <%= f.label :Name %>
+    <%= f.text_field :Name %>
+  </div>
+  <div class="field">
+    <%= f.label :Phone %>
+    <%= f.text_field :Phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Email %>
+    <%= f.text_field :Email %>
+  </div>
+<% end -%>

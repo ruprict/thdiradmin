@@ -9,4 +9,8 @@ class SaleItemsController < ActionController::Base
     end
   end
   
+  def new
+    @sale_item = SaleItem.new(params[:sale_item])
+  end
+  
 end

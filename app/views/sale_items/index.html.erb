@@ -1,0 +1,12 @@
+<h1>Sale Items</h1>
+<table>
+  <thead>
+    <tr><th>Item</th><th>Category</th><th>Price</th><th>Name</th><th>PHone</th><th>Email</th></tr>
+  </thead>
+  <tfoot></tfoot>
+  <tbody>
+    <% for @item in @sale_items %>
+      <tr><td><%= link_to 'Edit', edit_sale_item_path(@item) %></td><td><%= link_to 'Del', sale_item_path(@item),:confirm => "Are you sure?", :method=>:delete %></td><td><%=@item.Item %></td><td><%=@item.Category %></td><td><%=@item.Price%></td><td><%=@item.Name%></td><td><%=@item.Phone%></td><td><%=@item.Email%></td></tr>
+    <%end%>
+   </tbody>
+</table>
